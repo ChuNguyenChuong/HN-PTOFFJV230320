@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        flex-grow: 1;
+        width: 1000px;
+        margin: auto;
+        background-color: gray;
+
+        display: grid;
+
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 300px 300px 300px 300px 300px 300px;
+
+        row-gap: 1;
+      }
+      .item {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .content {
+        position: absolute;
+
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        text-align: center;
+
+        opacity: 0;
+
+        transform: translate(0px, 100px);
+        transition: 1s;
+      }
+      .item:hover .content {
+        opacity: 1;
+        transform: translate(0px, 0px);
+      }
+      .content-title {
+        font-size: 32px;
+      }
+      .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      header {
+        font-size: 32px;
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      footer {
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 300px 300px 300px 300px 300px 300px;
+        grid-gap: 10px 10px;
+      }
+      .item:first-child {
+        grid-column-start: 1;
+        grid-column-end: 5;
+
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+      .item:nth-child(4) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+
+        grid-row-start: 3;
+        grid-row-end: 5;
+      }
+      .item:nth-child(7) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        grid-row-start: 5;
+        grid-row-end: 7;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Title</header>
+
+    <div class="container">
+      <div class="item">
+        <img src="./asset/image.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./asset/image1.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image2.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image3.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image4.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image5.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image6.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image7.png" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image8.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image9.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+      <div class="item">
+        <img src="./asset/image10.jpg" alt="" />
+        <div class="content">
+          <div class="content-title">title</div>
+          <span
+            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo velit animi voluptate laudantium obcaecati
+            nisi recusandae, mollitia numquam, ipsum ut asperiores ratione maxime facere vero cupiditate quo harum quae
+            rem?</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <ul>
+        <li>link 1</li>
+
+        <li>link 2</li>
+
+        <li>link 3</li>
+      </ul>
+    </footer>
+  </body>
+</html>
