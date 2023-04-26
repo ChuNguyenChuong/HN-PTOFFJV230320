@@ -171,11 +171,51 @@ const books = {
     this.danhsach[indexUpdate].author = author
     this.danhsach[indexUpdate].bookStatus = bookStatus
   },
+  delete: function (id) {
+    let indexDelete;
+    this.danhsach.forEach((book, index) => {
+      if (book.bookId === id) {
+        indexDelete = index
+      }
+    })
 
+    if (!indexDelete) {
+      console.log("khong tim thay sach can xoa");
+      return;
+    }
+    this.danhsach = this.danhsach.filter(item => item.bookId !== id)
+  },
+  sort: function () {
+    this.danhsach = this.danhsach.sort((currentItem, nextItem) => {
+      return currentItem.price - nextItem.price
+    })
+  },
+  searching: function (inputSearch) {
+    const searchResult = this.danhsach.find((item) => {
+      return item.bookName === inputSearch
+    })
+
+    return `
+    sach co id : ${searchResult.bookId},
+    ten sach la : ${searchResult.bookName}
+    price la : ${searchResult.price}
+    author la : ${searchResult.author}
+    bookStatus la : ${searchResult.bookStatus}
+    =======================================
+  `
+  }
 }
 
 books.inputData("nguoitiensu", "nguoi tien su", 1500, "linh", "da tra")
 books.inputData("dacnhantam", "dac nhan tam", 5000, "on than nao day", "da muon")
+books.inputData("nhungnguoikhonkhovicode", "nhung nguoi khon kho", 300, "some one", "da tra")
 console.log(books.displayData());
 books.updateDataById("dacnhantam", "dark qua", 3000, "tinh", "da tra")
 console.log(books.displayData());
+
+// books.delete("dacnhantam")
+
+console.log(books.sort());
+
+console.log(books.displayData());
+console.log("seach : nguoi tien su :", books.searching("nguoi tien su"));
