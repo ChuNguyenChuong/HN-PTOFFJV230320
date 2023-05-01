@@ -51,44 +51,66 @@
 // })
 
 // bai 3
-let arrayProduct = []
+
+const array = [];
+
+function getDataLocal(key) {
+  const dataInLocal = localStorage.getItem(key);
+  const result = dataInLocal ? JSON.parse(dataInLocal) : []
+  return result
+}
+
+function setDataToLocal(key, value) {
+  const stringifyValue = JSON.stringify(value)
+  localStorage.setItem(key, stringifyValue)
+}
 
 const nameValue = document.getElementById("name")
 const priceValue = document.getElementById("price")
 const saveBtn = document.getElementById("save")
-const ulHtml = document.getElementById("ul")
+const list = document.getElementById("list")
 
 
 saveBtn.addEventListener("click", event => {
+  const products = getDataLocal()
+  console.log("🚀 ~ file: app.js:74 ~ products:", products)
+
+  // add to products list
   let newProduct = {
     name: nameValue.value,
     price: priceValue.value
   }
-  arrayProduct.push(newProduct)
-  console.log("🚀 ~ file: app.js:68 ~ arrayProduct:", arrayProduct)
-  localStorage.setItem("products", JSON.stringify(arrayProduct))
+  products.push(newProduct);
+  console.log("🚀 ~ file: app.js:81 ~ products:", products)
+  // end
+  // set products to local
+  setDataToLocal("products", products)
 
-  arrayProduct.forEach((item, index) => {
+  const ulHtml = document.getElementById("ul")
+  ulHtml.remove()
+
+  const ulNew = document.createElement("ul")
+  ulNew.id = "ul"
+  console.log(products);
+  products.forEach((item, index) => {
     const newLi = document.createElement("li")
     const btnRemove = document.createElement("button")
     btnRemove.textContent = "remove"
 
     btnRemove.addEventListener("click", (e) => {
       // index
+      newLi.remove()
     })
 
     newLi.innerText = `${item.name} - ${item.price}`
 
     newLi.appendChild(btnRemove)
-    ulHtml.appendChild(newLi)
+    ulNew.appendChild(newLi)
   })
 
+  list.appendChild(ulNew)
 
 
-
-
-
-  console.log("🚀 ~ file: app.js:55 ~ arrayProduct:", arrayProduct)
 })
 
 
